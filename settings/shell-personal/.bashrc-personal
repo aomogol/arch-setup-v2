@@ -1,0 +1,27 @@
+############################################## alias from AOM
+alias yup="yay -Syyu --noconfirm"
+alias u="yay -Syyu --noconfirm"
+alias ds="du -hs *"
+alias mraom="sudo reflector --age 6 --latest 20  --fastest 20 --sort rate --protocol http,https --save /etc/pacman.d/mirrorlist"
+alias ip='ip --color=auto'
+alias ns='nslookup -type=any'
+alias ins="yay -S --needed --noconfirm"
+# get error messages from journalctl
+alias hata="journalctl -p 3 -xb"
+## hblock disable etmek için
+alias dhblock='hblock -S none -D none'
+
+## alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=/home/aom/dotfiles/ --work-tree=/home/aom'
+
+
+function path(){
+    old=$IFS
+    IFS=:
+    printf "%s\n" $PATH
+    IFS=$old
+}
+
+############################################## alias from AOM
+####################################################################
+#source ~/.aom-prompt.sh

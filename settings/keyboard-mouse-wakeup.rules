@@ -1,0 +1,4 @@
+### bluetooth Wake from suspend
+# /etc/udev/rules.d/91-keyboard-mouse-wakeup.rules
+# lsusb | grep bluetooth -i
+SUBSYSTEM=="usb", ATTRS{idVendor}=="8087", ATTRS{idProduct}=="0026" RUN+="/bin/sh -c 'echo enabled > /sys$env{DEVPATH}/../power/wakeup;'"
