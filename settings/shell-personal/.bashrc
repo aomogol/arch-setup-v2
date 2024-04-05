@@ -286,3 +286,7 @@ alias personal='cp -Rf /personal/* ~'
 
 # reporting tools - install when not installed
 #neofetch
+
+
+### STARSHIP install
+eval "$(starship init bash)"

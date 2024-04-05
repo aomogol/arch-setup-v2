@@ -35,25 +35,25 @@ function path(){
     IFS=$old
 }
 
-gcom() {
+function gcom() {
 	git add .
 	git commit -m "$1"
 	}
 
-	lazyg() {
+function lazyg() {
 	git add .
 	git commit -m "$1"
 	git push
 }
 
 # fonksiyonlar
-bulvesil (){
+function bulvesil (){
 		find . -type f -name ".DS_Store" -print -delete
 		find . -type f -name "._*" -print -delete
 		find . -type d -name ".@__thumb" -print -delete
 	}
 
-bosdirsil(){
+function bosdirsil(){
 		find . -type d -empty -exec rmdir -v {} +
 }
 
