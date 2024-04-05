@@ -1,4 +1,11 @@
-############################################## alias from AOM
+#
+# ~/.bashrc
+#
+#######################################################
+# Author    : Ahmet Önder Moğol
+#######################################################
+
+####  alias #########
 alias yup="yay -Syyu --noconfirm"
 alias u="yay -Syyu --noconfirm"
 alias ds="du -hs *"
@@ -14,7 +21,13 @@ alias dhblock='hblock -S none -D none'
 ## alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config='/usr/bin/git --git-dir=/home/aom/dotfiles/ --work-tree=/home/aom'
 
+alias cpu1="sudo auto-cpufreq --stats"
 
+# git
+alias gs="git status"
+alias gcache="git config credential.helper store"
+
+## Functions _________________________________
 function path(){
     old=$IFS
     IFS=:
@@ -22,6 +35,39 @@ function path(){
     IFS=$old
 }
 
-############################################## alias from AOM
+gcom() {
+	git add .
+	git commit -m "$1"
+	}
+
+	lazyg() {
+	git add .
+	git commit -m "$1"
+	git push
+}
+
+# fonksiyonlar
+bulvesil (){
+		find . -type f -name ".DS_Store" -print -delete
+		find . -type f -name "._*" -print -delete
+		find . -type d -name ".@__thumb" -print -delete
+	}
+
+bosdirsil(){
+		find . -type d -empty -exec rmdir -v {} +
+}
+
+## Functions _________________________________
+
+
+alias depo4="sudo mount -t cifs //192.168.1.85/aom /mnt/depo4 -o rw,file_mode=0777,dir_mode=0777,username=onder,password=Logom001,iocharset=utf8,vers=1.0"
+alias depo8c="sudo mount -t nfs -o vers=3 192.168.1.87:/aom /mnt/depo8c"
+alias depo8a="sudo mount -t nfs -o vers=3 192.168.1.87:/aomogol /mnt/depo8aomogol"
+alias depo8pub="sudo mount -t nfs -o vers=3 192.168.1.87:/public /mnt/depo8pub"
+alias depo8iso="sudo mount -t nfs -o vers=3 192.168.1.87:/iso /mnt/depo8iso"
+
+# _____________________________________________________________________________
+
+### alias from AOM ###############
 ####################################################################
 #source ~/.aom-prompt.sh
